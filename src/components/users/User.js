@@ -1,9 +1,14 @@
 import classes from './User.module.css';
+import Card from '../card/Card';
 
-export default function User() {
+export default function User(props) {
     return (
-        <div className={classes.user}>
-
-        </div>
+        <li className={classes.user}>
+            <Card>
+                <div className={classes.content}>
+                    <p>{props.name + ' ' + props.age}</p>
+                </div>
+            </Card>
+        </li>
     );
 }
