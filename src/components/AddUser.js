@@ -4,12 +4,12 @@ import classes from './AddUser.module.css';
 import Button from "./button/Button";
 
 export default function AddUser(props) {
-    const [currrentUser, setCurrentUser] = useState('');
-    const [currrentAge, setCurrentAge] = useState('');
+    const [currentUser, setCurrentUser] = useState('');
+    const [currentAge, setCurrentAge] = useState('');
 
     function onSubmitHandler(event) {
         event.preventDefault();
-        // props.addUser({user:'test 01', age: 'test-2'});
+        props.addUser({user: currentUser, age: currentAge});
     }
 
     function userChangeHandler(event) {
@@ -21,7 +21,8 @@ export default function AddUser(props) {
     }
 
     function onClickHandler(event) {
-
+        if (currentUser.trim() === "" || currentAge.trim() === "") {return}
+        if (currentAge < 1) {return}
     }
 
     return (
@@ -31,13 +32,13 @@ export default function AddUser(props) {
                     <label>Username</label>
                     <input
                         id='user'
-                        value={currrentUser}
+                        value={currentUser}
                         onChange={userChangeHandler}
                     ></input>
                     <label>Age (Years)</label>
                     <input
                         id='age'
-                        value={currrentAge}
+                        value={currentAge}
                         onChange={ageChangeHandler}
                     ></input>
                     <Button type='submit' onClick={onClickHandler}>Add User</Button>
