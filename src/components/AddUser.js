@@ -9,7 +9,18 @@ export default function AddUser(props) {
 
     function onSubmitHandler(event) {
         event.preventDefault();
-        props.addUser({user: currentUser, age: currentAge});
+
+        if (currentUser.trim().length === 0 || currentAge.trim().length === 0) {return;}
+        if (+currentAge < 1) {return;}
+        
+        props.addUser(currentUser, currentAge);
+
+        setCurrentUser('');
+        setCurrentAge('');
+    }
+
+    function buttonClickHandler(event) {
+        props.onClick();
     }
 
     function userChangeHandler(event) {
@@ -18,11 +29,6 @@ export default function AddUser(props) {
 
     function ageChangeHandler(event) {
         setCurrentAge(event.target.value);
-    }
-
-    function onClickHandler(event) {
-        if (currentUser.trim() === "" || currentAge.trim() === "") {return}
-        if (currentAge < 1) {return}
     }
 
     return (
@@ -41,7 +47,7 @@ export default function AddUser(props) {
                         value={currentAge}
                         onChange={ageChangeHandler}
                     ></input>
-                    <Button type='submit' onClick={onClickHandler}>Add User</Button>
+                    <Button type='submit' onClick={buttonClickHandler}>Add User</Button>
                 </form>
             </Card>
         </div>
