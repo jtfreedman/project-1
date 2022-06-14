@@ -1,7 +1,7 @@
-.user{
-
-}
-
 .content{
     text-align: center;
+}
+
+.content p {
+    margin-left: 1rem;
 }

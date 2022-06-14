@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Card from "./card/Card";
-import classes from './AddUser.module.css';
 import Button from "./button/Button";
+import classes from './AddUser.module.css';
+
 
 export default function AddUser(props) {
     const [currentUser, setCurrentUser] = useState('');
