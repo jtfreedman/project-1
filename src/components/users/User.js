@@ -6,7 +6,7 @@ export default function User(props) {
         <li className={classes.user}>
             <Card>
                 <div className={classes.content}>
-                    <p>{props.name + ' ' + props.age}</p>
+                    <p>{props.name + ' ' + props.age + "yrs old"}</p>
                 </div>
             </Card>
         </li>
