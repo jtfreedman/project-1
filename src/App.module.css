@@ -6,4 +6,11 @@
 }
 .main{
     width: auto;
+    margin-top: 15%;
+}
+
+@media only screen and (max-device-width: 480px) {
+    .main {
+        margin-top: 30%;
+    }
 }
