@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className={classes.container}>
-      <ErrorModal></ErrorModal>
+      <ErrorModal title='title' message='message'/>
       <div className={classes.main}>
         <AddUser addUser={onAddUser} onClick={onClickHandler}/>
         <UserList users={users}/>
