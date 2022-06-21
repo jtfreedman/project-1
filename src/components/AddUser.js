@@ -37,7 +37,7 @@ export default function AddUser(props) {
         setCurrentAge('');
     }
 
-    function buttonClickHandler(event) {
+    function buttonClickHandler() {
         props.onClick();
     }
 
@@ -49,7 +49,7 @@ export default function AddUser(props) {
         setCurrentAge(event.target.value);
     }
 
-    function onClickHandler(event) {
+    function onClickHandler() {
         setShowError(false);
     }
 

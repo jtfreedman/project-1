@@ -5,7 +5,6 @@ import UserList from "./components/users/UserList";
 
 function App() {
   const [users, setUsers] = useState([]);
-  const [buttonClick, setButtonClick] = useState(false);
 
   function onAddUser(user, age) {
     setUsers((prevUserList) => {
@@ -13,14 +12,10 @@ function App() {
     })
   }
 
-  function onClickHandler(event) {
-    setButtonClick(true);
-  }
-
   return (
     <div className={classes.container}>
       <div className={classes.main}>
-        <AddUser addUser={onAddUser} onClick={onClickHandler}/>
+        <AddUser addUser={onAddUser}/>
         <UserList users={users}/>
       </div>
     </div>
