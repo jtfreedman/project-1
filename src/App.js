@@ -2,7 +2,6 @@ import { useState } from 'react';
 import AddUser from "./components/AddUser";
 import classes from './App.module.css';
 import UserList from "./components/users/UserList";
-import ErrorModal from './components/ui/ErrorModal';
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -20,7 +19,6 @@ function App() {
 
   return (
     <div className={classes.container}>
-      <ErrorModal title='title' message='message'/>
       <div className={classes.main}>
         <AddUser addUser={onAddUser} onClick={onClickHandler}/>
         <UserList users={users}/>
